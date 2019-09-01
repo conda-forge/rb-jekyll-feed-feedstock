@@ -1,5 +1,5 @@
 {% set name = "jekyll-feed" %}
-{% set version = "0.12.1" %}
+{% set version = "0.11.0" %}
 
 package:
   name: rb-{{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem
-  sha256: e3514d6fb1529a685f36d3260dcfa2f51f1fd53592229b604b0c8fdce48ec005
+  sha256: 97c52f737f6ff7c442277c1f2e525c6b1c76b699654bd711f4b6b53a17c6b486
 
 build:
   noarch: generic
-  number: 1
+  number: 0
   script:
     - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem
     - gem unpack {{ name }}-{{ version }}.gem
@@ -22,7 +22,7 @@ requirements:
     - ruby
   run:
     - ruby
-    - rb-jekyll >=3.7,<5.0
+    - rb-jekyll >=3.7,<4.0
 
 test:
   commands:
